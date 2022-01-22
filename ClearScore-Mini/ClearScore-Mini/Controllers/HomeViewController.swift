@@ -7,14 +7,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, Storyboarded {
     
     private var creditViewModel: Credit!
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
         creditViewModel.update = { [weak self] success in
             guard let self = self else {return}
             switch success {
@@ -31,30 +31,12 @@ class HomeViewController: UIViewController {
         creditViewModel.getCreditScore()
     }
     
-//    init(_ viewModel: Credit) {
-//        self.creditViewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     func injectDependencies(_ viewModel: Credit) {
         creditViewModel = viewModel
     }
     
-    func setupView() {
-        
-        let containerView = UIView(frame: self.view.frame)
-        containerView.backgroundColor = .white
-        self.view.addSubview(containerView)
-        
-        let backgroundImgView = UIImageView(frame: containerView.frame)
-        backgroundImgView.image = UIImage(named: "background")
-        backgroundImgView.contentMode = .scaleAspectFill
-        containerView.addSubview(backgroundImgView)
-        
+    @IBAction func goToDetail(_ sender: UIButton) {
+        coordinator?.detailPage()
     }
 }
 

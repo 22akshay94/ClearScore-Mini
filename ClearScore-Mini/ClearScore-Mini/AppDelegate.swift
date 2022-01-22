@@ -11,21 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var coordinator: MainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let resource = Resource<CreditScore>(url: Constants.URLs.getCreditInfo, httpMethod: .get)
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(navController)
+        coordinator?.start()
         
-//        let home = HomeViewController<CreditScore>(CreditViewModel(resource, WebService<CreditScore>()))
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let home = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        home.injectDependencies(CreditViewModel(resource, WebService<CreditScore>()))
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let navController = UINavigationController(rootViewController: home)
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
-        self.window = window
         
         return true
     }
