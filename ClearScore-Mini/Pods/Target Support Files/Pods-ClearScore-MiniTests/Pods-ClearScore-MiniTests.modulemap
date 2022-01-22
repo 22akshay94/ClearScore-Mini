@@ -1,0 +1,6 @@
+framework module Pods_ClearScore_MiniTests {
+  umbrella header "Pods-ClearScore-MiniTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

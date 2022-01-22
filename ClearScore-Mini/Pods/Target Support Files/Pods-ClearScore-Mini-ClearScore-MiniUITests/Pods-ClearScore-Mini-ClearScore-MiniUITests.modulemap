@@ -1,0 +1,6 @@
+framework module Pods_ClearScore_Mini_ClearScore_MiniUITests {
+  umbrella header "Pods-ClearScore-Mini-ClearScore-MiniUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
