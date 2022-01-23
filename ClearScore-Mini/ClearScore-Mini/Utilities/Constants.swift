@@ -15,4 +15,3 @@ struct Constants {
 }
 
 typealias isReachable = (Bool) ->  ()
-//typealias getCreditScoreCompletion = (Result<CreditScore, NetworkError>) -> ()
