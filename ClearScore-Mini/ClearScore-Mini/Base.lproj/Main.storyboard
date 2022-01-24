@@ -19,36 +19,35 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-oz-u6R">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wn-qx-d2w">
-                                <rect key="frame" x="138" y="790" width="119" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="NEXT SCREEN"/>
-                                <connections>
-                                    <action selector="goToDetail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gyg-5Q-f1b"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJP-hi-YGa" customClass="DonutView" customModule="ClearScore_Mini" customModuleProvider="target">
                                 <rect key="frame" x="52" y="94" width="310.5" height="310.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIX-wW-CwG" customClass="ErrorView" customModule="ClearScore_Mini" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dkS-fX-m3Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="sIX-wW-CwG" firstAttribute="leading" secondItem="dkS-fX-m3Y" secondAttribute="leading" id="5ON-XO-8I3"/>
+                            <constraint firstAttribute="trailing" secondItem="sIX-wW-CwG" secondAttribute="trailing" id="BBO-jm-1m6"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="top" secondItem="dkS-fX-m3Y" secondAttribute="top" constant="50" id="LpW-rh-3hc"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="height" secondItem="Ade-oz-u6R" secondAttribute="width" multiplier="0.75" id="Lsz-hu-T0X"/>
+                            <constraint firstAttribute="bottom" secondItem="sIX-wW-CwG" secondAttribute="bottom" id="USz-Rf-2aJ"/>
                             <constraint firstItem="Ade-oz-u6R" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xob-Ui-b5K"/>
                             <constraint firstAttribute="bottom" secondItem="Ade-oz-u6R" secondAttribute="bottom" id="Zhz-5N-10u"/>
                             <constraint firstItem="dkS-fX-m3Y" firstAttribute="trailing" secondItem="Ade-oz-u6R" secondAttribute="trailing" id="Zu4-QI-v7F"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="width" secondItem="Ade-oz-u6R" secondAttribute="width" multiplier="0.75" id="i2D-DA-tfx"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="centerX" secondItem="Ade-oz-u6R" secondAttribute="centerX" id="n5r-da-ZAq"/>
+                            <constraint firstItem="sIX-wW-CwG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="piq-Re-1FY"/>
                             <constraint firstItem="Ade-oz-u6R" firstAttribute="leading" secondItem="dkS-fX-m3Y" secondAttribute="leading" id="zCg-z8-Fup"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="donutView" destination="xJP-hi-YGa" id="re4-PV-8Sz"/>
+                        <outlet property="errorView" destination="sIX-wW-CwG" id="3em-9x-T6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

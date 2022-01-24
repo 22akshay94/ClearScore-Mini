@@ -16,8 +16,21 @@ protocol Network {
 enum NetworkError: Error {
     case DecodingError
     case DomainError
-    case NetworkError
+    case NoConnectionError
     case NoError
+    
+    var localizedDescription: String {
+        switch self {
+        case .NoConnectionError:
+            return NSLocalizedString(Constants.NetworkErrorMessages.NetworkError, comment: "NetworkError")
+        case .DecodingError:
+            return NSLocalizedString(Constants.NetworkErrorMessages.DecodingError, comment: "NetworkError")
+        case .DomainError:
+            return NSLocalizedString(Constants.NetworkErrorMessages.DomainError, comment: "NetworkError")
+        case .NoError:
+            return NSLocalizedString("", comment: "My error")
+        }
+    }
 }
 
 // An enum of different types of HTTP methods required to make an API call
@@ -59,7 +72,7 @@ public class WebService<T: Decodable>: Network {
                     }
                 }.resume()
             } else {
-                completion(.failure(.NetworkError))
+                completion(.failure(.NoConnectionError))
             }
         }
     }

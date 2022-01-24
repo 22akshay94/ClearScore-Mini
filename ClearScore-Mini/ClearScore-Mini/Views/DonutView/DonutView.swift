@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DonutDelegate {
+    func donutTapped()
+}
+
 class DonutView: UIView {
     
     @IBOutlet private var view: UIView!
@@ -20,12 +24,13 @@ class DonutView: UIView {
     private var startValue: Double!
     private var endValue: Double!
     private var animationDuration: CFTimeInterval!
-    private var animationStartDate = Date()
+    private var animationStartDate: Date!
     
+    var delegate: DonutDelegate? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        view = loadNib()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,6 +79,15 @@ class DonutView: UIView {
         
         stackView.isHidden = true
         loaderLabel.isHidden = false
+        
+        self.isUserInteractionEnabled = false
+        let tap = UITapGestureRecognizer(target: self, action: #selector(donutTapped(_:)))
+        addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func donutTapped(_ sender: UITapGestureRecognizer? = nil) {
+        delegate?.donutTapped()
     }
     
     func loader(show: Bool = true) {
@@ -107,6 +121,7 @@ class DonutView: UIView {
         
         stackView.isHidden = false
         loaderLabel.isHidden = true
+        self.isUserInteractionEnabled = true
         
         let scoreAnimation = CABasicAnimation(keyPath: "strokeEnd")
         let value: Float = Float(creditInfo.score)/Float(creditInfo.maxScoreValue)
@@ -125,12 +140,13 @@ class DonutView: UIView {
         
         startValue = Double(creditInfo.minScoreValue)
         endValue = Double(creditInfo.score)
-        animationDuration = duration + 3
+        animationDuration = duration
         
         let displayLink = CADisplayLink(target: self, selector: #selector(updateScore))
         displayLink.add(to: .main, forMode: .default)
         
         bottomLabel.text = "out of \(creditInfo.maxScoreValue)"
+        animationStartDate = Date()
         
     }
     
