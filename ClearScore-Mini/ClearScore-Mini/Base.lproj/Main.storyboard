@@ -34,19 +34,22 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="dkS-fX-m3Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xJP-hi-YGa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="LpW-rh-3hc"/>
+                            <constraint firstItem="xJP-hi-YGa" firstAttribute="top" secondItem="dkS-fX-m3Y" secondAttribute="top" constant="50" id="LpW-rh-3hc"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="height" secondItem="Ade-oz-u6R" secondAttribute="width" multiplier="0.75" id="Lsz-hu-T0X"/>
                             <constraint firstItem="Ade-oz-u6R" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xob-Ui-b5K"/>
                             <constraint firstAttribute="bottom" secondItem="Ade-oz-u6R" secondAttribute="bottom" id="Zhz-5N-10u"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ade-oz-u6R" secondAttribute="trailing" id="Zu4-QI-v7F"/>
+                            <constraint firstItem="dkS-fX-m3Y" firstAttribute="trailing" secondItem="Ade-oz-u6R" secondAttribute="trailing" id="Zu4-QI-v7F"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="width" secondItem="Ade-oz-u6R" secondAttribute="width" multiplier="0.75" id="i2D-DA-tfx"/>
                             <constraint firstItem="xJP-hi-YGa" firstAttribute="centerX" secondItem="Ade-oz-u6R" secondAttribute="centerX" id="n5r-da-ZAq"/>
-                            <constraint firstItem="Ade-oz-u6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCg-z8-Fup"/>
+                            <constraint firstItem="Ade-oz-u6R" firstAttribute="leading" secondItem="dkS-fX-m3Y" secondAttribute="leading" id="zCg-z8-Fup"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="donutView" destination="xJP-hi-YGa" id="re4-PV-8Sz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +71,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="wbc-hm-AP0"/>
+                        <viewLayoutGuide key="safeArea" id="BDx-1M-lFr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>

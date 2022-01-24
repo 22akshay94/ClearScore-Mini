@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonutView" customModule="ClearScore_Mini" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundView" destination="TeV-U3-uYW" id="MKl-fZ-aPa"/>
+                <outlet property="bottomLabel" destination="7An-xe-FZt" id="Mlp-ZG-gDH"/>
+                <outlet property="scoreLabel" destination="6Nk-sz-dRD" id="dlS-hw-PSa"/>
+                <outlet property="topLabel" destination="DTN-Cy-0Fo" id="y3M-a3-N6T"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JF8-gw-EnU"/>
             </connections>
         </placeholder>
@@ -19,26 +19,39 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeV-U3-uYW">
-                    <rect key="frame" x="25" y="25" width="350" height="350"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="chD-Hi-yKk">
+                    <rect key="frame" x="50" y="105" width="300" height="190"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTN-Cy-0Fo">
+                            <rect key="frame" x="125" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nk-sz-dRD">
+                            <rect key="frame" x="125" y="70" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7An-xe-FZt">
+                            <rect key="frame" x="125" y="140" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="TeV-U3-uYW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="QyK-f3-4e1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TeV-U3-uYW" secondAttribute="bottom" constant="25" id="ZgO-xC-d4o"/>
-                <constraint firstItem="TeV-U3-uYW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="aZK-wu-UFk"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TeV-U3-uYW" secondAttribute="trailing" constant="25" id="lR8-Rj-yAG"/>
+                <constraint firstItem="chD-Hi-yKk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2Uk-06-IB4"/>
+                <constraint firstItem="chD-Hi-yKk" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="TMu-fS-XXy"/>
+                <constraint firstItem="chD-Hi-yKk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cLN-ez-JQH"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="126.08695652173914" y="251.78571428571428"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

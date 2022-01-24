@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController, Storyboarded {
     
+    @IBOutlet private weak var donutView: DonutView!
+    
     private var creditViewModel: Credit!
     weak var coordinator: MainCoordinator?
 
@@ -19,7 +21,10 @@ class HomeViewController: UIViewController, Storyboarded {
             guard let self = self else {return}
             switch success {
             case .NoError:
-                print(self.creditViewModel.getCreditInfo())
+                let creditInfo = self.creditViewModel.getCreditInfo()
+                DispatchQueue.main.async {
+                    self.donutView.loadScore(creditInfo: creditInfo, duration: 2)
+                }
             case.NetworkError:
                 print("Please try again with network")
             case .DecodingError:

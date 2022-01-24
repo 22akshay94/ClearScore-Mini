@@ -29,6 +29,8 @@
 		BA4BAE6F279BBBA6009D7D2A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE6E279BBBA6009D7D2A /* DetailViewController.swift */; };
 		BA4BAE72279C681E009D7D2A /* DonutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4BAE71279C681E009D7D2A /* DonutView.xib */; };
 		BA4BAE74279C682A009D7D2A /* DonutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE73279C682A009D7D2A /* DonutView.swift */; };
+		BA854776279ED7DE00F1FCEC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA854775279ED7DE00F1FCEC /* ErrorView.swift */; };
+		BA854778279ED7EA00F1FCEC /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA854777279ED7EA00F1FCEC /* ErrorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		BA4BAE6E279BBBA6009D7D2A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BA4BAE71279C681E009D7D2A /* DonutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonutView.xib; sourceTree = "<group>"; };
 		BA4BAE73279C682A009D7D2A /* DonutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutView.swift; sourceTree = "<group>"; };
+		BA854775279ED7DE00F1FCEC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BA854777279ED7EA00F1FCEC /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		CEE5A7F8C0ECB2A9AC4E8AFB /* Pods-ClearScore-MiniTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScore-MiniTests.release.xcconfig"; path = "Target Support Files/Pods-ClearScore-MiniTests/Pods-ClearScore-MiniTests.release.xcconfig"; sourceTree = "<group>"; };
 		F0ABB62AF635B452AAD880B2 /* Pods-ClearScore-MiniTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScore-MiniTests.debug.xcconfig"; path = "Target Support Files/Pods-ClearScore-MiniTests/Pods-ClearScore-MiniTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +197,7 @@
 		BA4BAE57279A62CA009D7D2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA854774279ED7BE00F1FCEC /* ErrorView */,
 				BA4BAE70279C6812009D7D2A /* DonutView */,
 			);
 			path = Views;
@@ -249,6 +254,15 @@
 				BA4BAE73279C682A009D7D2A /* DonutView.swift */,
 			);
 			path = DonutView;
+			sourceTree = "<group>";
+		};
+		BA854774279ED7BE00F1FCEC /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				BA854775279ED7DE00F1FCEC /* ErrorView.swift */,
+				BA854777279ED7EA00F1FCEC /* ErrorView.xib */,
+			);
+			path = ErrorView;
 			sourceTree = "<group>";
 		};
 		BEC250908E46CACA16172D26 /* Frameworks */ = {
@@ -374,6 +388,7 @@
 				BA4BAE30279A60B5009D7D2A /* Assets.xcassets in Resources */,
 				BA4BAE2E279A60B3009D7D2A /* Main.storyboard in Resources */,
 				BA4BAE72279C681E009D7D2A /* DonutView.xib in Resources */,
+				BA854778279ED7EA00F1FCEC /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +527,7 @@
 				BA4BAE27279A60B3009D7D2A /* AppDelegate.swift in Sources */,
 				BA4BAE5E279A68FF009D7D2A /* NetworkConnection.swift in Sources */,
 				BA4BAE5C279A662E009D7D2A /* Constants.swift in Sources */,
+				BA854776279ED7DE00F1FCEC /* ErrorView.swift in Sources */,
 				BA4BAE74279C682A009D7D2A /* DonutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

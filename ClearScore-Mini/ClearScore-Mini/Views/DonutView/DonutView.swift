@@ -9,9 +9,17 @@ import UIKit
 
 class DonutView: UIView {
     
-    @IBOutlet var view: UIView!
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var topLabel: UILabel!
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet private weak var bottomLabel: UILabel!
     private var shapeLayer: CAShapeLayer!
+    
+    private var startValue: Double!
+    private var endValue: Double!
+    private var animationDuration: CFTimeInterval!
+    private var animationStartDate = Date()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,11 +34,19 @@ class DonutView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        self.backgroundColor = .black.withAlphaComponent(0.5)
+        self.layer.cornerRadius = self.frame.height/2
+        self.clipsToBounds = true
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
         configureDonut()
     }
     
     
-    @discardableResult func loadNib() -> UIView {
+    @discardableResult private func loadNib() -> UIView {
         let view = Bundle.main.loadNibNamed("DonutView", owner: self, options: nil)?.first as! UIView
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.frame = bounds
@@ -38,19 +54,13 @@ class DonutView: UIView {
         return view
     }
 
-    func configureDonut() {
+    private func configureDonut() {
         
-        backgroundView.backgroundColor = .black
-        backgroundView.alpha = 0.5
-        backgroundView.layer.cornerRadius = backgroundView.frame.height/2
-        backgroundView.clipsToBounds = true
-        
-        
-        let centre = CGPoint(x: bounds.midY, y: bounds.midY)
+        let centre = CGPoint(x: bounds.midX, y: bounds.midY)
         
         shapeLayer = CAShapeLayer()
         
-        let circularPath = UIBezierPath(arcCenter: centre, radius: (self.bounds.width - 62)/2, startAngle: -CGFloat.pi/2, endAngle: 1.5*CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: centre, radius: self.bounds.width*0.48, startAngle: -CGFloat.pi/2, endAngle: 1.5*CGFloat.pi, clockwise: true)
         shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = UIColor.white.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
@@ -58,28 +68,47 @@ class DonutView: UIView {
         shapeLayer.strokeEnd = 0
         shapeLayer.lineCap = .round
         
-        
         self.layer.addSublayer(shapeLayer)
-        loadScore(score: 514, maxScore: 700)
     }
     
-    func loadScore(score: Float, maxScore: Float) {
+    func loadScore(creditInfo: CreditReportInfo, duration: CFTimeInterval) {
         
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        let value: Float = score/maxScore
-        basicAnimation.toValue = value
-        basicAnimation.duration = 2
-        basicAnimation.fillMode = .forwards
-        basicAnimation.isRemovedOnCompletion = false
-        shapeLayer.add(basicAnimation, forKey: "donutLoader")
+        let scoreAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        let value: Float = Float(creditInfo.score)/Float(creditInfo.maxScoreValue)
+        scoreAnimation.toValue = value
+        scoreAnimation.duration = duration
+        scoreAnimation.fillMode = .forwards
+        scoreAnimation.isRemovedOnCompletion = false
+        shapeLayer.add(scoreAnimation, forKey: "scoreAnimation")
+        
+        showScore(creditInfo: creditInfo, duration: duration)
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private func showScore(creditInfo: CreditReportInfo, duration: CFTimeInterval) {
+        
+        topLabel.text = "Your credit score is"
+        
+        startValue = Double(creditInfo.minScoreValue)
+        endValue = Double(creditInfo.score)
+        animationDuration = duration + 1.25
+        
+        let displayLink = CADisplayLink(target: self, selector: #selector(updateScore))
+        displayLink.add(to: .main, forMode: .default)
+        
+        bottomLabel.text = "out of \(creditInfo.maxScoreValue)"
+        
     }
-    */
-
+    
+    @objc private func updateScore() {
+        let now = Date()
+        let timeElapsed = now.timeIntervalSince(animationStartDate)
+        
+        if timeElapsed > animationDuration {
+            scoreLabel.text = "\(Int(endValue))"
+        } else {
+            let percentage = timeElapsed/animationDuration
+            let score = startValue + percentage * (endValue - startValue)
+            scoreLabel.text = "\(Int(score))"
+        }
+    }
 }
