@@ -17,12 +17,14 @@ class HomeViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        donutView.loader()
         creditViewModel.update = { [weak self] success in
             guard let self = self else {return}
             switch success {
             case .NoError:
                 let creditInfo = self.creditViewModel.getCreditInfo()
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.donutView.loader(show: false)
                     self.donutView.loadScore(creditInfo: creditInfo, duration: 2)
                 }
             case.NetworkError:

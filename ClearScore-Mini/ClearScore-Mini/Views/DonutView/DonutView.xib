@@ -9,7 +9,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonutView" customModule="ClearScore_Mini" customModuleProvider="target">
             <connections>
                 <outlet property="bottomLabel" destination="7An-xe-FZt" id="Mlp-ZG-gDH"/>
+                <outlet property="loaderLabel" destination="2Yo-8i-ify" id="f5D-Eu-PC9"/>
                 <outlet property="scoreLabel" destination="6Nk-sz-dRD" id="dlS-hw-PSa"/>
+                <outlet property="stackView" destination="chD-Hi-yKk" id="rVc-rq-x0L"/>
                 <outlet property="topLabel" destination="DTN-Cy-0Fo" id="y3M-a3-N6T"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JF8-gw-EnU"/>
             </connections>
@@ -41,13 +43,23 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching your credit score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yo-8i-ify">
+                    <rect key="frame" x="30" y="152.5" width="340" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="chD-Hi-yKk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2Uk-06-IB4"/>
+                <constraint firstAttribute="trailing" secondItem="2Yo-8i-ify" secondAttribute="trailing" constant="30" id="3g0-ft-aex"/>
+                <constraint firstItem="2Yo-8i-ify" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GN9-a5-dcd"/>
                 <constraint firstItem="chD-Hi-yKk" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="TMu-fS-XXy"/>
                 <constraint firstItem="chD-Hi-yKk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cLN-ez-JQH"/>
+                <constraint firstItem="2Yo-8i-ify" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="meT-FN-8lC"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

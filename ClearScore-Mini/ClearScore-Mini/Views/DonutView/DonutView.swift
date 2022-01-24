@@ -13,6 +13,8 @@ class DonutView: UIView {
     @IBOutlet private weak var topLabel: UILabel!
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var bottomLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var loaderLabel: UILabel!
     private var shapeLayer: CAShapeLayer!
     
     private var startValue: Double!
@@ -69,9 +71,42 @@ class DonutView: UIView {
         shapeLayer.lineCap = .round
         
         self.layer.addSublayer(shapeLayer)
+        
+        stackView.isHidden = true
+        loaderLabel.isHidden = false
+    }
+    
+    func loader(show: Bool = true) {
+        
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 0.5, 1]
+        gradientLayer.frame = view.frame
+        
+        let angle = -45*(CGFloat.pi/180)
+        gradientLayer.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
+        
+        loaderLabel.layer.mask = gradientLayer
+        
+        let shimmerAnimation = CABasicAnimation(keyPath: "transform.translation.x")
+        shimmerAnimation.fromValue = -view.frame.width
+        shimmerAnimation.toValue = view.frame.width
+        shimmerAnimation.repeatCount = Float.infinity
+        shimmerAnimation.duration = 2
+        
+        
+        if show {
+            gradientLayer.add(shimmerAnimation, forKey: "shimmerAnimation")
+        } else {
+            loaderLabel.layer.mask?.removeAllAnimations()
+        }
     }
     
     func loadScore(creditInfo: CreditReportInfo, duration: CFTimeInterval) {
+        
+        stackView.isHidden = false
+        loaderLabel.isHidden = true
         
         let scoreAnimation = CABasicAnimation(keyPath: "strokeEnd")
         let value: Float = Float(creditInfo.score)/Float(creditInfo.maxScoreValue)
@@ -90,7 +125,7 @@ class DonutView: UIView {
         
         startValue = Double(creditInfo.minScoreValue)
         endValue = Double(creditInfo.score)
-        animationDuration = duration + 1.25
+        animationDuration = duration + 3
         
         let displayLink = CADisplayLink(target: self, selector: #selector(updateScore))
         displayLink.add(to: .main, forMode: .default)
