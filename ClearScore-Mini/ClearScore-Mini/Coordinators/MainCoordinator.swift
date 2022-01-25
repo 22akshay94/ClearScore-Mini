@@ -27,9 +27,10 @@ class MainCoordinator: Coordinator {
         navController.pushViewController(home, animated: false)
     }
     
-    func detailPage() {
+    func detailPage(_ viewModel: CreditReportInfo) {
         let detail = DetailViewController.instantiate(storyboard: "Main")
         detail.coordinator = self
+        detail.injectDependency(viewModel)
         navController.pushViewController(detail, animated: true)
     }
 }

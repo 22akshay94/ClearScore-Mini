@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol DonutDelegate {
+protocol DonutDelegate: AnyObject {
     func donutTapped()
 }
 
@@ -17,8 +17,8 @@ class DonutView: UIView {
     @IBOutlet private weak var topLabel: UILabel!
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var bottomLabel: UILabel!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var loaderLabel: UILabel!
+    @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private  weak var loaderLabel: UILabel!
     private var shapeLayer: CAShapeLayer!
     
     private var startValue: Double!
@@ -26,7 +26,10 @@ class DonutView: UIView {
     private var animationDuration: CFTimeInterval!
     private var animationStartDate: Date!
     
-    var delegate: DonutDelegate? = nil
+    var customTopLine: String = ""
+    var customBottomLine: String = ""
+    
+    weak var delegate: DonutDelegate? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -136,7 +139,7 @@ class DonutView: UIView {
     
     private func showScore(creditInfo: CreditReportInfo, duration: CFTimeInterval) {
         
-        topLabel.text = "Your credit score is"
+        topLabel.text = customTopLine == "" ? "Your credit score is":customTopLine
         
         startValue = Double(creditInfo.minScoreValue)
         endValue = Double(creditInfo.score)
@@ -145,7 +148,7 @@ class DonutView: UIView {
         let displayLink = CADisplayLink(target: self, selector: #selector(updateScore))
         displayLink.add(to: .main, forMode: .default)
         
-        bottomLabel.text = "out of \(creditInfo.maxScoreValue)"
+        bottomLabel.text = customBottomLine == "" ? "out of \(creditInfo.maxScoreValue)":customBottomLine
         animationStartDate = Date()
         
     }

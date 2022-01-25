@@ -36,22 +36,28 @@ class HomeViewController: UIViewController, Storyboarded {
     
     private func apiCall() {
         donutView.loader()
-        creditViewModel.update = { [weak self] result in
+        NetworkConnection().networkConnection { [weak self] isReachable in
             guard let self = self else {return}
-            if result == .NoError {
-                let creditInfo = self.creditViewModel.getCreditInfo()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.donutView.loader(show: false)
-                    self.donutView.loadScore(creditInfo: creditInfo, duration: 2)
+            if isReachable {
+                self.creditViewModel.update = { result in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.donutView.loader(show: false)
+                        if result == .NoError {
+                            let creditInfo = self.creditViewModel.getCreditInfo()
+                            self.donutView.loadScore(creditInfo: creditInfo, duration: 2)
+                        } else {
+                            self.errorView.showError(with: result.localizedDescription)
+                        }
+                    }
                 }
+                self.creditViewModel.getCreditScore()
             } else {
                 DispatchQueue.main.async {
                     self.donutView.loader(show: false)
-                    self.errorView.showError(with: result.localizedDescription)
+                    self.errorView.showError(with: NetworkError.NoConnectionError.localizedDescription)
                 }
             }
         }
-        creditViewModel.getCreditScore()
     }
 }
 
@@ -59,7 +65,7 @@ class HomeViewController: UIViewController, Storyboarded {
 extension HomeViewController: DonutDelegate {
     
     func donutTapped() {
-        coordinator?.detailPage()
+        coordinator?.detailPage(creditViewModel.getCreditInfo())
     }
 }
 
@@ -67,8 +73,8 @@ extension HomeViewController: DonutDelegate {
 extension HomeViewController: ErrorViewDelegate {
     
     func refresh() {
-        print("refresh pressed")
-        NetworkConnection().networkConnection(completionHandler: { isReachable in
+        NetworkConnection().networkConnection(completionHandler: { [weak self] isReachable in
+            guard let self = self else {return}
             if isReachable {
                 DispatchQueue.main.async {
                     self.errorView.dismiss()

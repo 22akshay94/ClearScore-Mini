@@ -15,8 +15,8 @@ struct Constants {
     
     struct NetworkErrorMessages {
         static let NetworkError = "There seems to be no internet connection. Please check the conenctivity and try again?"
-        static let DecodingError = "Oops! We've seem to have run into a problem."
-        static let DomainError = "Oops! We've seem to have run into a problem."
+        static let DecodingError = "Oops! We've seem to have run into a problem. Please try again after a while"
+        static let DomainError = "Oops! We've seem to have run into a problem. Please try again after a while"
     }
 }
 

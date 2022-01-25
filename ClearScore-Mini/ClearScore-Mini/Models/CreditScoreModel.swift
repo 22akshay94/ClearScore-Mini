@@ -15,4 +15,7 @@ struct CreditReportInfo: Decodable {
     let score: Int
     let maxScoreValue: Int
     let minScoreValue: Int
+    let currentShortTermCreditLimit: Int
+    let equifaxScoreBandDescription: String
+    let daysUntilNextReport: Int
 }

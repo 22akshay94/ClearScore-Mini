@@ -52,29 +52,23 @@ public class WebService<T: Decodable>: Network {
     
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) where T: Decodable {
         
-        NetworkConnection().networkConnection { isReachable in
-            if isReachable {
-                var request = URLRequest(url: resource.url)
-                request.httpMethod = resource.httpMethod.rawValue
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                URLSession.shared.dataTask(with: request) { data, response, error in
-                    
-                    guard let data = data, error == nil else {
-                        completion(.failure(.DomainError))
-                        return
-                    }
-                    let result = try? JSONDecoder().decode(T.self, from: data)
-                    if let result = result {
-                        completion(.success(result))
-                    } else {
-                        completion(.failure(.DecodingError))
-                    }
-                }.resume()
-            } else {
-                completion(.failure(.NoConnectionError))
+        var request = URLRequest(url: resource.url)
+        request.httpMethod = resource.httpMethod.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                completion(.failure(.DomainError))
+                return
             }
-        }
+            let result = try? JSONDecoder().decode(T.self, from: data)
+            if let result = result {
+                completion(.success(result))
+            } else {
+                completion(.failure(.DecodingError))
+            }
+        }.resume()
     }
 }
 

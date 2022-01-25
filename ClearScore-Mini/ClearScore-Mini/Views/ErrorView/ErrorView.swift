@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ErrorViewDelegate {
+protocol ErrorViewDelegate: AnyObject {
     func refresh()
 }
 
@@ -17,7 +17,7 @@ class ErrorView: UIView {
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
     
-    var delegate: ErrorViewDelegate? = nil
+    weak var delegate: ErrorViewDelegate? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)

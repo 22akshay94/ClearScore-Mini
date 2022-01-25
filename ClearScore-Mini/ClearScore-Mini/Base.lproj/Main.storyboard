@@ -62,17 +62,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DETAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAq-mN-RaH">
-                                <rect key="frame" x="186" y="438" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Erb-TJ-OHV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="puz-Kk-eMF">
+                                <rect key="frame" x="30" y="64" width="354" height="169.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3w-34-orc">
+                                        <rect key="frame" x="112.5" y="0.0" width="129" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="410" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-Pi-hKt">
+                                        <rect key="frame" x="120" y="46.5" width="114.5" height="76.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="64"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1m-5K-9dq">
+                                        <rect key="frame" x="125.5" y="144" width="103.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6xe-Ga-8al">
+                                <rect key="frame" x="149" y="253.5" width="116.5" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waW-Ji-bWG">
+                                        <rect key="frame" x="0.0" y="0.0" width="20.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="equifax-logo" translatesAutoresizingMaskIntoConstraints="NO" id="33S-zc-K5n">
+                                        <rect key="frame" x="26.5" y="0.0" width="90" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="Mkf-8S-dyQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="NRn-qo-DYF"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current credit limit is: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-H0-F8x">
+                                <rect key="frame" x="10" y="323.5" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BDx-1M-lFr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Kz-H0-F8x" firstAttribute="leading" secondItem="BDx-1M-lFr" secondAttribute="leading" constant="10" id="0f5-Cr-acC"/>
+                            <constraint firstItem="1Kz-H0-F8x" firstAttribute="top" secondItem="6xe-Ga-8al" secondAttribute="bottom" constant="50" id="1GS-ca-JZ5"/>
+                            <constraint firstItem="6xe-Ga-8al" firstAttribute="centerX" secondItem="puz-Kk-eMF" secondAttribute="centerX" id="Ff5-ag-92a"/>
+                            <constraint firstItem="Erb-TJ-OHV" firstAttribute="top" secondItem="ois-u4-2TM" secondAttribute="top" id="HVG-Oh-RoM"/>
+                            <constraint firstItem="BDx-1M-lFr" firstAttribute="trailing" secondItem="1Kz-H0-F8x" secondAttribute="trailing" constant="10" id="IGn-rE-xxW"/>
+                            <constraint firstItem="puz-Kk-eMF" firstAttribute="top" secondItem="BDx-1M-lFr" secondAttribute="top" constant="20" id="Ltv-ta-7fd"/>
+                            <constraint firstItem="BDx-1M-lFr" firstAttribute="trailing" secondItem="puz-Kk-eMF" secondAttribute="trailing" constant="30" id="P5n-TM-3ou"/>
+                            <constraint firstItem="puz-Kk-eMF" firstAttribute="leading" secondItem="BDx-1M-lFr" secondAttribute="leading" constant="30" id="XZs-wI-rGd"/>
+                            <constraint firstItem="Erb-TJ-OHV" firstAttribute="trailing" secondItem="BDx-1M-lFr" secondAttribute="trailing" id="Zle-9m-g1g"/>
+                            <constraint firstItem="6xe-Ga-8al" firstAttribute="top" secondItem="puz-Kk-eMF" secondAttribute="bottom" constant="20" id="Znx-CQ-fHD"/>
+                            <constraint firstItem="puz-Kk-eMF" firstAttribute="centerX" secondItem="Erb-TJ-OHV" secondAttribute="centerX" id="dQY-PE-x2W"/>
+                            <constraint firstItem="Erb-TJ-OHV" firstAttribute="leading" secondItem="BDx-1M-lFr" secondAttribute="leading" id="gOp-Vs-71n"/>
+                            <constraint firstAttribute="bottom" secondItem="Erb-TJ-OHV" secondAttribute="bottom" id="u9J-bf-BQr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="creditScoreLabel" destination="cCc-Pi-hKt" id="IlH-hM-WAs"/>
+                        <outlet property="descriptionLabel" destination="1Kz-H0-F8x" id="dAT-2C-8YU"/>
+                        <outlet property="maxScoreLabel" destination="L1m-5K-9dq" id="LVd-hV-RIK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWR-Q8-iIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,6 +146,7 @@
     </scenes>
     <resources>
         <image name="background" width="1280" height="720"/>
+        <image name="equifax-logo" width="993.66668701171875" height="186"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
