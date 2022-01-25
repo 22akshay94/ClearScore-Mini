@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, Storyboarded {
     @IBOutlet private weak var errorView: ErrorView!
     
     private var creditViewModel: Credit!
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: Coordinator? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()

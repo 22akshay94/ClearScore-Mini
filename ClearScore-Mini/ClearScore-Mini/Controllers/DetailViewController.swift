@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: Coordinator?
 
     @IBOutlet private weak var creditScoreLabel: UILabel!
     @IBOutlet private weak var maxScoreLabel: UILabel!
@@ -28,6 +28,7 @@ class DetailViewController: UIViewController, Storyboarded {
     }
     
     private func setupView() {
+        creditScoreLabel.accessibilityIdentifier = "CreditScoreLabel"
         creditScoreLabel.text = "\(creditInfoViewModel!.score)"
         maxScoreLabel.text = "out of \(creditInfoViewModel!.maxScoreValue)"
         

@@ -61,6 +61,7 @@ class DonutView: UIView {
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.frame = bounds
         addSubview(view)
+        accessibilityIdentifier = "DonutView"
         return view
     }
 
@@ -85,8 +86,7 @@ class DonutView: UIView {
         
         self.isUserInteractionEnabled = false
         let tap = UITapGestureRecognizer(target: self, action: #selector(donutTapped(_:)))
-        addGestureRecognizer(tap)
-        
+        addGestureRecognizer(tap)   
     }
     
     @objc func donutTapped(_ sender: UITapGestureRecognizer? = nil) {

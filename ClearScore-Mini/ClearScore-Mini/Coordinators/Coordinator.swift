@@ -8,9 +8,11 @@
 import UIKit
 import Foundation
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] {get set}
     var navController: UINavigationController {get set}
     
     func start()
+    
+    func detailPage(_ viewModel: CreditReportInfo)
 }

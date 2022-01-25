@@ -15,7 +15,7 @@
 		BA4BAE2E279A60B3009D7D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4BAE2C279A60B3009D7D2A /* Main.storyboard */; };
 		BA4BAE30279A60B5009D7D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4BAE2F279A60B5009D7D2A /* Assets.xcassets */; };
 		BA4BAE33279A60B5009D7D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4BAE31279A60B5009D7D2A /* LaunchScreen.storyboard */; };
-		BA4BAE3E279A60B5009D7D2A /* ClearScore_MiniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE3D279A60B5009D7D2A /* ClearScore_MiniTests.swift */; };
+		BA4BAE3E279A60B5009D7D2A /* ClearScore_Mini_ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE3D279A60B5009D7D2A /* ClearScore_Mini_ViewModelTests.swift */; };
 		BA4BAE48279A60B5009D7D2A /* ClearScore_MiniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE47279A60B5009D7D2A /* ClearScore_MiniUITests.swift */; };
 		BA4BAE4A279A60B5009D7D2A /* ClearScore_MiniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE49279A60B5009D7D2A /* ClearScore_MiniUITestsLaunchTests.swift */; };
 		BA4BAE5C279A662E009D7D2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE5B279A662E009D7D2A /* Constants.swift */; };
@@ -31,6 +31,8 @@
 		BA4BAE74279C682A009D7D2A /* DonutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE73279C682A009D7D2A /* DonutView.swift */; };
 		BA854776279ED7DE00F1FCEC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA854775279ED7DE00F1FCEC /* ErrorView.swift */; };
 		BA854778279ED7EA00F1FCEC /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA854777279ED7EA00F1FCEC /* ErrorView.xib */; };
+		BA8E63A0279F88C100BD19F7 /* MockWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E639F279F88C100BD19F7 /* MockWebService.swift */; };
+		BA8E63A527A082B600BD19F7 /* ClearScore_Mini_WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E63A427A082B600BD19F7 /* ClearScore_Mini_WebServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,7 @@
 		BA4BAE32279A60B5009D7D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA4BAE34279A60B5009D7D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4BAE39279A60B5009D7D2A /* ClearScore-MiniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ClearScore-MiniTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA4BAE3D279A60B5009D7D2A /* ClearScore_MiniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScore_MiniTests.swift; sourceTree = "<group>"; };
+		BA4BAE3D279A60B5009D7D2A /* ClearScore_Mini_ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScore_Mini_ViewModelTests.swift; sourceTree = "<group>"; };
 		BA4BAE43279A60B5009D7D2A /* ClearScore-MiniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ClearScore-MiniUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4BAE47279A60B5009D7D2A /* ClearScore_MiniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScore_MiniUITests.swift; sourceTree = "<group>"; };
 		BA4BAE49279A60B5009D7D2A /* ClearScore_MiniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScore_MiniUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -83,6 +85,8 @@
 		BA4BAE73279C682A009D7D2A /* DonutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutView.swift; sourceTree = "<group>"; };
 		BA854775279ED7DE00F1FCEC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BA854777279ED7EA00F1FCEC /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		BA8E639F279F88C100BD19F7 /* MockWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWebService.swift; sourceTree = "<group>"; };
+		BA8E63A427A082B600BD19F7 /* ClearScore_Mini_WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScore_Mini_WebServiceTests.swift; sourceTree = "<group>"; };
 		CEE5A7F8C0ECB2A9AC4E8AFB /* Pods-ClearScore-MiniTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScore-MiniTests.release.xcconfig"; path = "Target Support Files/Pods-ClearScore-MiniTests/Pods-ClearScore-MiniTests.release.xcconfig"; sourceTree = "<group>"; };
 		F0ABB62AF635B452AAD880B2 /* Pods-ClearScore-MiniTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScore-MiniTests.debug.xcconfig"; path = "Target Support Files/Pods-ClearScore-MiniTests/Pods-ClearScore-MiniTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,7 +176,8 @@
 		BA4BAE3C279A60B5009D7D2A /* ClearScore-MiniTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA4BAE3D279A60B5009D7D2A /* ClearScore_MiniTests.swift */,
+				BA8E63A127A081A700BD19F7 /* WebserviceTests */,
+				BA8E639E279F888700BD19F7 /* ViewModelTests */,
 			);
 			path = "ClearScore-MiniTests";
 			sourceTree = "<group>";
@@ -263,6 +268,23 @@
 				BA854777279ED7EA00F1FCEC /* ErrorView.xib */,
 			);
 			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		BA8E639E279F888700BD19F7 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA4BAE3D279A60B5009D7D2A /* ClearScore_Mini_ViewModelTests.swift */,
+				BA8E639F279F88C100BD19F7 /* MockWebService.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		BA8E63A127A081A700BD19F7 /* WebserviceTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA8E63A427A082B600BD19F7 /* ClearScore_Mini_WebServiceTests.swift */,
+			);
+			path = WebserviceTests;
 			sourceTree = "<group>";
 		};
 		BEC250908E46CACA16172D26 /* Frameworks */ = {
@@ -536,7 +558,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4BAE3E279A60B5009D7D2A /* ClearScore_MiniTests.swift in Sources */,
+				BA8E63A0279F88C100BD19F7 /* MockWebService.swift in Sources */,
+				BA8E63A527A082B600BD19F7 /* ClearScore_Mini_WebServiceTests.swift in Sources */,
+				BA4BAE3E279A60B5009D7D2A /* ClearScore_Mini_ViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

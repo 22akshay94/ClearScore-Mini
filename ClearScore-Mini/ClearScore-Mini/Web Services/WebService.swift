@@ -72,10 +72,3 @@ public class WebService<T: Decodable>: Network {
     }
 }
 
-
-class MockWebService: Network {
-    
-    func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
-        
-    }
-}

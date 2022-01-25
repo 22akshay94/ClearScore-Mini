@@ -22,10 +22,10 @@ class CreditViewModel<T: Decodable>: Credit {
         }
     }
     
-    private var webService: WebService<T>
+    private var webService: Network
     private let resource: Resource<T>
     
-    init(_ resource: Resource<T>, _ webService: WebService<T>) {
+    init(_ resource: Resource<T>, _ webService: Network) {
         self.resource = resource
         self.webService = webService
     }
