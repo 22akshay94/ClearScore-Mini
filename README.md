@@ -22,7 +22,7 @@ I added a 2 second delay in the completion block after the API call in HomeViewC
 
 ## Things I could have done if I had more time:
 
-  1. Initialiser Injection: The first thing I would've done different is implementing **_Initialiser Injection_**. This would require creating the UI programmatically. Using Method Injection led to comparitively less mutablility but I was able to finish the task faster.
+  1. Initializer Injection: The first thing I would've done different is implementing **_Initializer Injection_**. This would require creating the UI programmatically. Using Method Injection led to comparitively less mutablility but I was able to finish the task faster.
   2. Another thing which I probably would've done is using View Model Binding to update the UI more dynamically.
   3. I could've written more and better test cases where more funtionality would be present in the app (this is more about this being a mock app rather than a time constraint issue).
   4. Better naming conventions: The naming conventions might seem a little haphazard (e.g. names of a couple of protocols). I would defnitely take care of this if I had more time.
