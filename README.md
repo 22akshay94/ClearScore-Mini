@@ -27,6 +27,4 @@ I added a 2 second delay in the completion block after the API call in HomeViewC
   3. I could've written more and better test cases where more funtionality would be present in the app (this is more about this being a mock app rather than a time constraint issue).
   4. Better naming conventions: The naming conventions might seem a little haphazard (e.g. names of a couple of protocols). I would defnitely take care of this if I had more time.
   5. The shimmer animation could probably use a little improvement as well.
-
-P.S. I couldn't download the app on my phone to go through it properly (I'm still on the Indian App Store :neutral_face:) so I checked out the ClearScore advert on YouTube and tried to recreate the donut in the app.
   
