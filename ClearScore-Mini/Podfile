@@ -8,6 +8,7 @@ target 'ClearScore-Mini' do
   # Pods for ClearScore-Mini
 
 	pod 'ReachabilitySwift', '~> 5.0'
+	pod 'AFNetworking', '~> 2.4.2'
 
   target 'ClearScore-MiniTests' do
     inherit! :search_paths

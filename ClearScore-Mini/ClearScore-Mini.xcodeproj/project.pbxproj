@@ -10,6 +10,9 @@
 		06B5ACA5272633170CF11D68 /* Pods_ClearScore_MiniTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A13A0D199F30FFD585A5C2 /* Pods_ClearScore_MiniTests.framework */; };
 		2EFA633ED45192B0ED3AF674 /* Pods_ClearScore_Mini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608375538804F7A9BD628DBA /* Pods_ClearScore_Mini.framework */; };
 		2F80FC60707F60F065AA2ABB /* Pods_ClearScore_Mini_ClearScore_MiniUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53442814BE01E45BCA7D0E83 /* Pods_ClearScore_Mini_ClearScore_MiniUITests.framework */; };
+		3A436D0B284F651300E8C9E3 /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = 3A436D0A284F651300E8C9E3 /* CGRPCZlib */; };
+		3A436D0D284F651300E8C9E3 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 3A436D0C284F651300E8C9E3 /* GRPC */; };
+		3A436D0F284F651300E8C9E3 /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A436D0E284F651300E8C9E3 /* protoc-gen-grpc-swift */; };
 		BA4BAE27279A60B3009D7D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE26279A60B3009D7D2A /* AppDelegate.swift */; };
 		BA4BAE2B279A60B3009D7D2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4BAE2A279A60B3009D7D2A /* HomeViewController.swift */; };
 		BA4BAE2E279A60B3009D7D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4BAE2C279A60B3009D7D2A /* Main.storyboard */; };
@@ -97,6 +100,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EFA633ED45192B0ED3AF674 /* Pods_ClearScore_Mini.framework in Frameworks */,
+				3A436D0B284F651300E8C9E3 /* CGRPCZlib in Frameworks */,
+				3A436D0F284F651300E8C9E3 /* protoc-gen-grpc-swift in Frameworks */,
+				3A436D0D284F651300E8C9E3 /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +321,11 @@
 			dependencies = (
 			);
 			name = "ClearScore-Mini";
+			packageProductDependencies = (
+				3A436D0A284F651300E8C9E3 /* CGRPCZlib */,
+				3A436D0C284F651300E8C9E3 /* GRPC */,
+				3A436D0E284F651300E8C9E3 /* protoc-gen-grpc-swift */,
+			);
 			productName = "ClearScore-Mini";
 			productReference = BA4BAE23279A60B3009D7D2A /* ClearScore-Mini.app */;
 			productType = "com.apple.product-type.application";
@@ -390,6 +401,9 @@
 				Base,
 			);
 			mainGroup = BA4BAE1A279A60B3009D7D2A;
+			packageReferences = (
+				3A436D09284F651300E8C9E3 /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
 			productRefGroup = BA4BAE24279A60B3009D7D2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -900,6 +914,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A436D09284F651300E8C9E3 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A436D0A284F651300E8C9E3 /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A436D09284F651300E8C9E3 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		3A436D0C284F651300E8C9E3 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A436D09284F651300E8C9E3 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		3A436D0E284F651300E8C9E3 /* protoc-gen-grpc-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A436D09284F651300E8C9E3 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = "protoc-gen-grpc-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA4BAE1B279A60B3009D7D2A /* Project object */;
 }
