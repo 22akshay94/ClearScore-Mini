@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GRPC
 
 class HomeViewController: UIViewController, Storyboarded {
     
